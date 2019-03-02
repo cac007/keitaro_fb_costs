@@ -12,7 +12,7 @@
 $apikey='cb8ab98658dc1d7d2bf7418d52992d61';
 $domain='http://webyellow.tk';
 $ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $domain.'http://webyellow.tk/admin_api/v1/campaigns');
+curl_setopt($ch, CURLOPT_URL, $domain.'/admin_api/v1/campaigns');
 curl_setopt($ch, CURLOPT_HTTPHEADER, array('Api-Key: '.$apikey));
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $campaigns=json_decode(curl_exec($ch));
