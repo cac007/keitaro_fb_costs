@@ -22,7 +22,7 @@ $csvheader = explode(",", $csvsplit[0]);
 $dateind = array_search($datename, $csvheader);
 $adsetind = array_search($adsetname, $csvheader);
 $spendind = array_search($spendname, $csvheader);
-$campind = array_search($spendname, $csvheader);
+$campind = array_search($campaignname, $csvheader);
 
 if ($adsetind === false)
 {
@@ -80,7 +80,7 @@ for ($i = 1; $i < count($csvsplit); $i++) {
     $updateres= json_decode($rawres);
     if($updateres->success)
     {
-        echo "Загрузили расходы в " . $curspend . "р для адсета " . $adset . " за " . $date . "<br/>";
+        echo "Загрузили расходы в " . $curspend . "р для адсета " . $adset . "из кампании ".$campaign." за " . $date . "<br/>";
     }
     else{
         echo "Не смогли загрузить расходы для адсета " . $adset;
